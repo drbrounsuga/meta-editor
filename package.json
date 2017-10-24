@@ -1,0 +1,37 @@
+{
+  "name": "meta-editor",
+  "version": "0.1.0",
+  "description": "Batch edit PDF metadata from a CSV file",
+  "main": "main.js",
+  "private": false,
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drbrounsuga/meta-editor.git"
+  },
+  "keywords": [
+    "Electron",
+    "PDF",
+    "React",
+    "Metadata"
+  ],
+  "author": "LaVaughn Haynes",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/drbrounsuga/meta-editor/issues"
+  },
+  "homepage": "https://github.com/drbrounsuga/meta-editor#readme"
+}
