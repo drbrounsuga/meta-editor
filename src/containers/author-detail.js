@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { selectAuthor } from '../actions/actions_index';
+
 class AuthorDetail extends Component{
 
   render(){
@@ -10,18 +12,33 @@ class AuthorDetail extends Component{
       );
     }
 
+    let onUpdateAuthor = author => this.props.onUpdateAuthor(author);
+
     return(
       <div>
         <div>Author: {this.props.author.name}</div>
+        <p><button onClick={() => onUpdateAuthor('Batman')}>Batman</button></p>
+        <p><button onClick={() => onUpdateAuthor('LaVaughn Haynes')}>LaVaughn Haynes</button></p>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
+// map data from state to props of this component
+const mapStateToProps = state => {
   return{
     author: state.author
   };
 }
 
-export default connect(mapStateToProps)(AuthorDetail);
+// map dispatcher functions to the props of this component
+const mapDispatchToProps = dispatch => {
+  return {
+    onUpdateAuthor: name => {
+      dispatch(selectAuthor(name));
+    }
+  }
+}
+
+// connect the props and dispatchers
+export default connect(mapStateToProps, mapDispatchToProps)(AuthorDetail);

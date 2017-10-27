@@ -1,8 +1,10 @@
-export function selectBook(book){
-  // selectBook is an ActionCreator, it needs to return an action,
-  // an object with a type property.
+// Action Types
+export const AUTHOR_SELECTED = 'AUTHOR_SELECTED';
+
+// ActionCreators
+export function selectAuthor(author){
   return {
-    type: 'BOOK_SELECTED',
-    payload: book
+    type: AUTHOR_SELECTED,
+    payload: author
   };
 }
