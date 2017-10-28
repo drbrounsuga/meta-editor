@@ -1,4 +1,4 @@
-import C from '../constants';
+import C from './types';
 
 // Action Creators
 export function addValue(val){

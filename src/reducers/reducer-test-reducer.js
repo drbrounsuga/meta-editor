@@ -1,4 +1,4 @@
-import C from '../constants';
+import C from '../actions/types';
 
 const initialState = { test: 0 };
 
