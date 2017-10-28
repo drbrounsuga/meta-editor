@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions/actions-test';
 
-class AuthorDetail extends Component{
+class Test extends Component{
 
   render(){
     if(!this.props.test){
@@ -45,4 +45,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 // connect the props and dispatchers
-export default connect(mapStateToProps, mapDispatchToProps)(AuthorDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(Test);
