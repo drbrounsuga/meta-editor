@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { selectAuthor } from '../actions/actions_index';
+import * as actions from '../actions/actions-test';
 
 class AuthorDetail extends Component{
 
   render(){
-    if(!this.props.author){
+    if(!this.props.test){
       return(
         <div>Not connected to store</div>
       );
     }
 
-    let onUpdateAuthor = author => this.props.onUpdateAuthor(author);
+    let onAdd = val => this.props.addValue(val);
+    let onSubtract = val => this.props.subtractValue(val);
 
     return(
       <div>
-        <div>Author: {this.props.author.name}</div>
-        <p><button onClick={() => onUpdateAuthor('Batman')}>Batman</button></p>
-        <p><button onClick={() => onUpdateAuthor('LaVaughn Haynes')}>LaVaughn Haynes</button></p>
+        <div>Test Value: {this.props.test.test}</div>
+        <p><button onClick={() => onAdd(2)}>++</button></p>
+        <p><button onClick={() => onSubtract(1)}>-</button></p>
       </div>
     );
   }
@@ -27,15 +28,18 @@ class AuthorDetail extends Component{
 // map data from state to props of this component
 const mapStateToProps = state => {
   return{
-    author: state.author
+    test: state.test
   };
 }
 
 // map dispatcher functions to the props of this component
 const mapDispatchToProps = dispatch => {
   return {
-    onUpdateAuthor: name => {
-      dispatch(selectAuthor(name));
+    addValue: val => {
+      dispatch(actions.addValue(val));
+    },
+    subtractValue: val => {
+      dispatch(actions.subtractValue(val));
     }
   }
 }

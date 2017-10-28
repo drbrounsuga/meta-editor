@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import ActiveAuthor from './reducer-test-author';
+import TestReducer from './reducer-test-reducer';
 
 const rootReducer = combineReducers({
-  author: ActiveAuthor
+  test: TestReducer
 });
 
 export default rootReducer;

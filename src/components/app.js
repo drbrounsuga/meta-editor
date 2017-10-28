@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import logo from '../assets/images/logo.svg';
 import '../assets/styles/App.css';
 
-import AuthorDetail from '../containers/author-detail';
+import Test from '../containers/test';
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
 
-        <AuthorDetail />
+        <Test />
         
       </div>
     );
