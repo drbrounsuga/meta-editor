@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';  
 
 import * as actions from '../actions/actions-test';
 
@@ -29,24 +30,22 @@ class Test extends Component{
 
 // map data from state to props of this component
 const mapStateToProps = state => {
+
   return{
     test: state.test
   };
+  
 }
 
 // map dispatcher functions to the props of this component
 const mapDispatchToProps = dispatch => {
-  return {
-    addValue: val => {
-      dispatch(actions.addValue(val));
-    },
-    subtractValue: val => {
-      dispatch(actions.subtractValue(val));
-    },
-    incrementAsync: () => {
-      dispatch(actions.incrementAsync());
-    }
-  }
+
+  return bindActionCreators({
+    addValue: actions.addValue,
+    subtractValue: actions.subtractValue,
+    incrementAsync: actions.incrementAsync
+  }, dispatch);
+
 }
 
 // connect the props and dispatchers
