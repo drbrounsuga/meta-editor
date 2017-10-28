@@ -4,13 +4,26 @@ const { app, BrowserWindow } = require('electron');
 
 const path = require('path');
 const url = require('url');
+const Settings = require('./src/settings.js');
 
 const environment = process.env.NODE_ENV;
 
 let mainWindow;
 
+
+const settings = new Settings({
+  configName: 'user-preferences',
+  defaults: {
+    windowBounds: { width: 800, height: 600 }
+  }
+});
+
+
 function createWindow(){
-  
+
+  // test
+  console.log(settings.get('windowBounds'));
+
   mainWindow = new BrowserWindow({
     width: 800, 
     height: 600
