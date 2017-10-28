@@ -14,3 +14,12 @@ export function subtractValue(val){
     payload: val
   };
 }
+
+// Thunk
+export function incrementAsync() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(addValue(50));
+    }, 1000);
+  };
+}

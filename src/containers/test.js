@@ -14,12 +14,14 @@ class Test extends Component{
 
     let onAdd = val => this.props.addValue(val);
     let onSubtract = val => this.props.subtractValue(val);
+    let onAsync = val => this.props.incrementAsync();
 
     return(
       <div>
         <div>Test Value: {this.props.test.test}</div>
         <p><button onClick={() => onAdd(2)}>++</button></p>
         <p><button onClick={() => onSubtract(1)}>-</button></p>
+        <p><button onClick={() => onAsync()}>Async</button></p>
       </div>
     );
   }
@@ -40,6 +42,9 @@ const mapDispatchToProps = dispatch => {
     },
     subtractValue: val => {
       dispatch(actions.subtractValue(val));
+    },
+    incrementAsync: () => {
+      dispatch(actions.incrementAsync());
     }
   }
 }
