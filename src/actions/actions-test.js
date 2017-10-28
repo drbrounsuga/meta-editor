@@ -1,16 +1,16 @@
-import C from './types';
+import T from './types';
 
 // Action Creators
 export function addValue(val){
   return {
-    type: C.TEST_INCREMENT,
+    type: T.TEST_INCREMENT,
     payload: val
   };
 }
 
 export function subtractValue(val){
   return {
-    type: C.TEST_DECREMENT,
+    type: T.TEST_DECREMENT,
     payload: val
   };
 }

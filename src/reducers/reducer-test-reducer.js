@@ -1,13 +1,13 @@
-import C from '../actions/types';
+import T from '../actions/types';
 
 const initialState = { test: 0 };
 
 export default function(state = initialState, action){
   switch(action.type){
-    case C.TEST_INCREMENT:
+    case T.TEST_INCREMENT:
       return Object.assign({}, state, {test: state.test + action.payload});
 
-    case C.TEST_DECREMENT:
+    case T.TEST_DECREMENT:
       return Object.assign({}, state, {test: state.test - action.payload});
 
     default:
