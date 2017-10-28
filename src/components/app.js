@@ -1,24 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+import FilterLink from './filterLink';
 
 import logo from '../assets/images/logo.svg';
 import '../assets/styles/App.css';
 
 import Test from '../containers/test';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+const App = () => (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome to React</h1>
+      </header>
 
-        <Test />
-        
-      </div>
-    );
-  }
-}
+      <Test />
+      <p>
+        <FilterLink filter="SHOW_ALL">
+          All
+        </FilterLink>
+        {', '}
+        <FilterLink filter="SHOW_ACTIVE">
+          Active
+        </FilterLink>
+      </p>
+    </div>
+  );
+
 
 export default App;
