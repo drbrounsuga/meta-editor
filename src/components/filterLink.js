@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../assets/styles/App.css';
-
 const FilterLink = ({ filter, children }) => (
   <Link
     to={filter === 'SHOW_ALL' ? '/' : `/${ filter }`}
