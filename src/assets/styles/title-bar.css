@@ -1,0 +1,47 @@
+.title-bar{
+  position: relative;
+  height: 50px;
+  -webkit-app-region: drag;
+  background-color: #12181F;
+  color: #B8C7CC;
+}
+
+.title-bar h1{
+  margin: 0;
+}
+
+.title-bar button{
+  -webkit-app-region: no-drag;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: #12181F;
+  color: #B8C7CC;
+}
+
+.title-bar button:hover{
+  background-color: #3B5166;
+}
+
+.title-bar li:last-child button:hover{
+  background-color: #FF4040;
+}
+
+.title-bar-buttons{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 150px;
+  height: 50px;
+  list-style: none; 
+}
+
+.title-bar-buttons li{
+  display: inline-block;
+  margin: 0;
+  border: none;
+  width: 50px;
+  height: 50px;
+}
