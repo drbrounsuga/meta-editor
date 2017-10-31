@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';  
 
 import * as actions from '../actions/actions-test';
+import '../assets/styles/title-bar.css';
 
 class TitleBar extends Component{
 
@@ -16,6 +17,11 @@ class TitleBar extends Component{
     return(
       <header className="title-bar">
         <h1>Title Bar</h1>
+        <ul className="title-bar-buttons">
+          <li><button title="Minimize" onClick={() => console.log('clicked')}>_</button></li>
+          <li><button title="Maximize" onClick={() => console.log('clicked')}>O</button></li>
+          <li><button title="Close" onClick={() => console.log('clicked')}>X</button></li>
+        </ul>
       </header>
     );
   }
